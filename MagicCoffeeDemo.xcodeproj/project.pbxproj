@@ -15,7 +15,10 @@
 		71240C3F25A904570089A0BB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71240C3E25A904570089A0BB /* OnboardingViewController.swift */; };
 		71240C4225A9E44A0089A0BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71240C4125A9E44A0089A0BB /* LoginViewController.swift */; };
 		A104CCBE2BD554160079F1ED /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104CCBD2BD554160079F1ED /* SignUpViewController.swift */; };
+		A104CCC02BD57E420079F1ED /* ButtonSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104CCBF2BD57E420079F1ED /* ButtonSetup.swift */; };
+		A104CCC22BD5822A0079F1ED /* UIShowHideTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104CCC12BD5822A0079F1ED /* UIShowHideTextField.swift */; };
 		A13B0EE12BD40F150028FE46 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13B0EE02BD40F150028FE46 /* Storyboard.storyboard */; };
+		A1DB69C62BD58F0D007DD7B6 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DB69C52BD58F0D007DD7B6 /* ForgotPasswordViewController.swift */; };
 		A1FD9A4D2BD33B4000D9A169 /* DMSans-Italic-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1FD9A462BD33B4000D9A169 /* DMSans-Italic-VariableFont_opsz,wght.ttf */; };
 		A1FD9A4E2BD33B4000D9A169 /* DMSans-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1FD9A472BD33B4000D9A169 /* DMSans-VariableFont_opsz,wght.ttf */; };
 		A1FD9A4F2BD33B4000D9A169 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1FD9A482BD33B4000D9A169 /* Poppins-Bold.ttf */; };
@@ -36,7 +39,10 @@
 		71240C3E25A904570089A0BB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		71240C4125A9E44A0089A0BB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A104CCBD2BD554160079F1ED /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A104CCBF2BD57E420079F1ED /* ButtonSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetup.swift; sourceTree = "<group>"; };
+		A104CCC12BD5822A0079F1ED /* UIShowHideTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShowHideTextField.swift; sourceTree = "<group>"; };
 		A13B0EE02BD40F150028FE46 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		A1DB69C52BD58F0D007DD7B6 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A1FD9A462BD33B4000D9A169 /* DMSans-Italic-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
 		A1FD9A472BD33B4000D9A169 /* DMSans-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
 		A1FD9A482BD33B4000D9A169 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 				71240C3B25A8A8490089A0BB /* DemoViewController.swift */,
 				71240C2625A894710089A0BB /* ViewController.swift */,
 				A104CCBD2BD554160079F1ED /* SignUpViewController.swift */,
+				A1DB69C52BD58F0D007DD7B6 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +118,8 @@
 		A13B0EE22BD40F420028FE46 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A104CCBF2BD57E420079F1ED /* ButtonSetup.swift */,
+				A104CCC12BD5822A0079F1ED /* UIShowHideTextField.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,9 +229,12 @@
 			files = (
 				A104CCBE2BD554160079F1ED /* SignUpViewController.swift in Sources */,
 				71240C3C25A8A8490089A0BB /* DemoViewController.swift in Sources */,
+				A104CCC02BD57E420079F1ED /* ButtonSetup.swift in Sources */,
 				71240C2725A894710089A0BB /* ViewController.swift in Sources */,
 				71240C2325A894710089A0BB /* AppDelegate.swift in Sources */,
+				A1DB69C62BD58F0D007DD7B6 /* ForgotPasswordViewController.swift in Sources */,
 				71240C4225A9E44A0089A0BB /* LoginViewController.swift in Sources */,
+				A104CCC22BD5822A0079F1ED /* UIShowHideTextField.swift in Sources */,
 				71240C3F25A904570089A0BB /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

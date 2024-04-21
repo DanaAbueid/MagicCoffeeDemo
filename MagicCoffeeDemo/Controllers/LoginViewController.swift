@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let buttonSetup = ButtonSetup()
     let stackView = UIStackView()
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
@@ -16,6 +17,9 @@ class LoginViewController: UIViewController {
     let loginTitle = UILabel()
     let loginWelcome = UILabel()
     let forgetPswTitle = makeForgetPswButton(withText: "Forgot Password?")
+
+    let signUpButton = makeForgetPswButton(withText: "Sign Up")
+
     
     
     override func viewDidLoad() {
@@ -53,8 +57,21 @@ extension LoginViewController {
         loginWelcome.numberOfLines = 0
         loginWelcome.textAlignment = .left
         
+        forgetPswTitle.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
     }
+    
+    @objc func forgetPasswordTapped() {
+        let ForgotVC = ForgotPasswordViewController() // Instantiate your SignUpViewController
+        navigationController?.pushViewController(ForgotVC, animated: true) // Push SignUpViewController onto the navigation stack
+    }
+    
+    @objc func loginTapped() {
+        let signUpVC = SignUpViewController() // Instantiate your SignUpViewController
+        navigationController?.pushViewController(signUpVC, animated: true) // Push SignUpViewController onto the navigation stack
+    }
+
     
     private func styleTextField(_ textField: UITextField, withText text: String) {
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +90,8 @@ extension LoginViewController {
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(forgetPswTitle)
         stackView.addArrangedSubview(loginButton)
+        stackView.addArrangedSubview(signUpButton)
+
         
         view.addSubview(stackView)
         
@@ -84,11 +103,11 @@ extension LoginViewController {
             emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
             
-        //    loginTitle.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
-       //     loginTitle.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            loginTitle.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            loginTitle.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
-        //    loginWelcome.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
-        //    loginWelcome.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            loginWelcome.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            loginWelcome.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
             passwordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
             passwordTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
@@ -149,3 +168,4 @@ extension UITextField {
     
     
 }
+

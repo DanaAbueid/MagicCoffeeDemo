@@ -10,18 +10,24 @@ import UIKit
 class SignUpViewController:  UIViewController {
     
     let stackView = UIStackView()
+    let usernameTextField = UITextField()
+    let phoneTextField = UITextField()
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
-    let loginButton = makeButton(withText: "Login")
+    let passwordCTextField = UIShowHideTextField()
+    let loginButton = makeButton(withText: "Signup")
     let loginTitle = UILabel()
     let loginWelcome = UILabel()
-    let forgetPswTitle = makeForgetPswButton(withText: "Forgot Password?")
+    let forgetPswTitle = makeForgetPswButton(withText: "Already a member? Sign in")
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
+        passwordCTextField.becomeFirstResponder()
+
     }
 }
 
@@ -36,23 +42,31 @@ extension SignUpViewController {
 
         styleTextField(emailTextField, withText: "  Email")
         styleTextField(passwordTextField, withText: "  Password")
+        styleTextField(usernameTextField, withText: "Username")
+        styleTextField(passwordCTextField, withText: "Password")
+        styleTextField(phoneTextField, withText: "Phone Number")
+
+        
         emailTextField.setIcon(.message)
-        passwordTextField.setIcon(.lock)
+        passwordCTextField.setIcon(.lock)
+        usernameTextField.setIcon(.profile)
+        phoneTextField.setIcon(.smartphone)
         
         
-        loginTitle.text = "Login"
+        loginTitle.text = "Sign up"
         loginTitle.font = UIFont(name: "Poppins-Medium", size: 30)
         loginTitle.textColor = .drakNavy
         loginTitle.numberOfLines = 0
         loginTitle.textAlignment = .left
         
         
-        loginWelcome.text = "Welcome Back!"
+        loginWelcome.text = "Create an account here"
         loginWelcome.font = UIFont(name: "Poppins-Regular", size: 20)
         loginWelcome.textColor = .semiGray
         loginWelcome.numberOfLines = 0
         loginWelcome.textAlignment = .left
         
+    
         
     }
     
@@ -69,11 +83,16 @@ extension SignUpViewController {
     func layout() {
         stackView.addArrangedSubview(loginTitle)
         stackView.addArrangedSubview(loginWelcome)
+        //////////////
+        stackView.addArrangedSubview(usernameTextField)
+        stackView.addArrangedSubview(phoneTextField)
+///////////
         stackView.addArrangedSubview(emailTextField)
-        stackView.addArrangedSubview(passwordTextField)
-        stackView.addArrangedSubview(forgetPswTitle)
+        stackView.addArrangedSubview(passwordCTextField)
+      //  stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(loginButton)
-        
+        stackView.addArrangedSubview(forgetPswTitle)
+
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
@@ -84,14 +103,20 @@ extension SignUpViewController {
             emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
             
-        //    loginTitle.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
-       //     loginTitle.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            loginTitle.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            loginTitle.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
-        //    loginWelcome.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
-        //    loginWelcome.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            loginWelcome.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            loginWelcome.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
-            passwordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
-            passwordTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            usernameTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            usernameTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            
+            phoneTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            phoneTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            
+            passwordCTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
+            passwordCTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
             
             forgetPswTitle.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
@@ -102,19 +127,5 @@ extension SignUpViewController {
         ])
     }
 }
-
-// MARK: - Buttons Setup
- func makeSignupButton(withText text: String) -> UIButton {
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitle(text, for: .normal)
-    button.titleLabel?.adjustsFontSizeToFitWidth = true
-    button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-    button.backgroundColor = .navyBlue
-    button.layer.cornerRadius = 8
-    button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
-    return button
-}
-
 
 
